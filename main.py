@@ -5,6 +5,7 @@ from tkinter import *
 from tkinter.constants import ANCHOR
 from GUI_frame_1 import *
 from GUI_frame_2 import *
+from GUI_helper_function import*
 
 HEIGHT = 900
 WIDTH = 1300
@@ -36,10 +37,6 @@ def CreateFrameTwo(root):
     table1 = CreateTablesFrameTwo(client_overview_frame)
     CreateButtonsFrameTwo(root,frame_two,table1)
 
-
-
-
-
     # # data_base_viewer = tk.Frame(frame_two, bg="white")
     # # data_base_viewer.place(height=200,width=800, x=300,y=50)
 
@@ -47,7 +44,7 @@ def CreateFrameTwo(root):
     # print("hej, frame två skapad")
     # # CreateLablesFrameTwo(root,frame_two)
     # Client_data_table = CreateTablesFrameTwo(root,frame_two)
-    return frame_two, table1
+    return frame_two, table1, dashboard_frame
 
 
 #########################bellow, frame 1#########################
@@ -60,8 +57,8 @@ canvas.pack()
 
 
 frame_one, url_box = CreateFrameOne(root) # Creates the first frame
-frame_two, table1 = CreateFrameTwo(root) # Crates the second frame
-SwitchFrameButton(frame_one,frame_two,table1) # TODO! Might need frame_two in the future
+frame_two, table1, dashboard_frame = CreateFrameTwo(root) # Crates the second frame
+SwitchFrameButton(frame_one,frame_two,table1,dashboard_frame) # TODO! Might need frame_two in the future
 root.mainloop()
 
 

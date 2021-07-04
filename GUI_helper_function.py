@@ -8,9 +8,10 @@ from backend import*
 current_url =""
 
 
-def SelectProperties(frame_two, table1):
+def SelectProperties(frame_one, frame_two, table1, dashboard_frame):
     SetFrameTwo(frame_two)
-    GetTojFile(current_url,table1)
+    list_of_clients_keys, list_of_clients_values = GetTojFile(current_url,table1)
+    CreateDashboardButtons(dashboard_frame,list_of_clients_keys, list_of_clients_values)
 
 def SetUrl(url):
     global current_url
@@ -28,15 +29,42 @@ def GetTojFile(current_url,table1): # This function is activated when you press 
         clients_of_the_month = ImportTojReport(current_url)
         list_of_clients_keys = list(clients_of_the_month.keys())
         list_of_clients_values = list(clients_of_the_month.values())
+
+        number_of_clients = len(list_of_clients_keys)
  
         for i in range(len(list_of_clients_keys)):
-            print("i forlooopen ------------------")
             table1.insert(parent="",index="end", values=(list_of_clients_keys[i],list_of_clients_values[i])) #iid är bra att hålla koll på, det ger id i listan, allstå vart i listan saken befinner sig 
+        print("clients arranged")
+        return list_of_clients_keys, list_of_clients_values
+
+
+
+def CreateDashboardButtons(dashboard_frame, list_of_clients_keys, list_of_clients_values):
+    dashboard_buttons = []
+    dashboard_button_x_location = 0
+    dashboard_button_y_location = 50
+
+    for i in range (len(list_of_clients_keys)):
+        dashboard_buttons.append(tk.Button(dashboard_frame, text = list_of_clients_keys[i],fg="black", bg="#eaffbf",highlightcolor="red", height=3))
+        dashboard_buttons[i].place(height=40,width=150, x=dashboard_button_x_location, y=dashboard_button_y_location)
+        dashboard_button_y_location = dashboard_button_y_location + 50
+
+
+
+
+ 
+    # client_1 = tk.Button(dashboard_frame, text = "Client 1",fg="black", bg="#eaffbf",highlightcolor="red", height=3)
+    # client_1.place(height=40,width=150, x=0, y=50)
+
+    # client_2 = tk.Button(dashboard_frame, text = "Client 2",fg="black", bg="#eaffbf",height=3)
+    # client_2.place(height=40,width=150, x=0, y=100)
+
 
 
 
 
 def ClearAllData(table1):
+    
     for i in table1.get_children():
         table1.delete(i)
 

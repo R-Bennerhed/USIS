@@ -8,8 +8,8 @@ from GUI_helper_function import*
 
 
 ################################################### Creates button that will switch to frame 2 #######################################################
-def SwitchFrameButton(frame_one, frame_two,table1):
-    switch_frame_button = tk.Button(frame_one, text = "Select properties", background="grey",height=5, command= lambda: SelectProperties(frame_two,table1))
+def SwitchFrameButton(frame_one, frame_two,table1, dashboard_frame):
+    switch_frame_button = tk.Button(frame_one, text = "Select properties", background="grey",height=5, command= lambda: SelectProperties(frame_one,frame_two,table1,dashboard_frame))
     switch_frame_button.place(height=40,width=120, x=1035, y=400)
 
 
@@ -75,19 +75,6 @@ def CreateEntry(frame_one):
 ########################################################### Above, I collect all functions that creates a button/field/table or anything that will lead to another function into frame 1 #####################################
 
 ############################################################ Bellow, functions that generates a value or use inputs to generate something new ################################################################################
-
-def GetTojFile(entry,table1): # This function is activated when you press the export button
-
-    if ImportTojReport(entry) == -1:
-        File_Not_Found_Error(entry)
-    else:
-        clients_of_the_month = ImportTojReport(entry)
-        list_of_clients_keys = list(clients_of_the_month.keys())
-        list_of_clients_values = list(clients_of_the_month.values())
- 
-        for i in range(len(list_of_clients_keys)):
-            print("i forlooopen ------------------")
-            table1.insert(parent="",index="end", values=(list_of_clients_keys[i],list_of_clients_values[i])) #iid är bra att hålla koll på, det ger id i listan, allstå vart i listan saken befinner sig 
 
 
 def GetUrl(url_box):
