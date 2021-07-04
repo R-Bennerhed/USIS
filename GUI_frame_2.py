@@ -44,19 +44,3 @@ def CreateTablesFrameTwo(client_overview_frame):
     return table1
 
 
-
-# def CreateTablesFrameTwo(root, frame_two):
-#     print("hej")
-#     # table2= ttk.Treeview(frame_two)
-#     # table2.place(relheight=0.5, relwidth=0.5)
-#     # table2["column"] = ["Client name","Hours"]
-#     # table2["show"] = "headings"
-#     # for column in table2["columns"]:
-#     #     table2.heading(column, text=column)
-#     # treescrolly = tk.Scrollbar(frame_two, orient="vertical", command=table2.yview)
-#     # treescrollx = tk.Scrollbar(frame_two, orient="horizontal", command=table2.xview)
-#     # table2.configure(xscrollcommand=treescrollx.set, yscrollcommand=treescrolly.set)
-#     # # treescrollx.pack(side="bottom", fill="x")
-#     # treescrolly.pack(side="right", fill="y")
-
-
