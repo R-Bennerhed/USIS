@@ -28,6 +28,8 @@ def SetFrameTwo(frame_two,dashboard_frame):
     dashboard_frame.place(height=1000,width=200, x=0,y=0)
 
 
+
+
 def GetTojFile(current_url,table1): # This function is activated when you press the export button
 
     if ImportTojReport(current_url) == -1:
