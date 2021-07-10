@@ -6,9 +6,7 @@ from backend import*
 
 
 
-
-
-def CreateLablesFrameThree(data_base_viewer):
+def CreateLablesFrameThree(data_base_viewer):  #Labels in dataviewer
     ########Row one#######
     client_name= tk.Label(data_base_viewer, text = "Client name;", bg="white", anchor="w")
     client_name.place(height=15,width=80, x=20,y=20)
@@ -25,7 +23,7 @@ def CreateLablesFrameThree(data_base_viewer):
     total_hours= tk.Label(data_base_viewer, text = "Total Hours;", bg="white", anchor="w")
     total_hours.place(height=15,width=85, x=20,y=160)
 
- ########Row two#######   
+    ########Row two#######   
     expiry_date= tk.Label(data_base_viewer, text = "Expiry;", bg="white",anchor="w")
     expiry_date.place(height=15,width=185, x=260,y=55)
 
@@ -35,7 +33,7 @@ def CreateLablesFrameThree(data_base_viewer):
     currency= tk.Label(data_base_viewer, text = "Currency;", bg="white",anchor="w")
     currency.place(height=15,width=85, x=260,y=160)
 
-########Row three#######
+    ########Row three#######
     organization_number= tk.Label(data_base_viewer, text = "Organization nr;", bg="white",anchor="w")
     organization_number.place(height=15,width=95, x=485,y=20)
 
@@ -52,7 +50,7 @@ def CreateLablesFrameThree(data_base_viewer):
     country.place(height=15,width=85, x=485,y=160)
 
 
-def CreateEntriesFrameThree(data_base_viewer):
+def CreateEntriesFrameThree(data_base_viewer):#Entries in dataviewer
 
         ########Row one#######
 
@@ -87,7 +85,7 @@ def CreateEntriesFrameThree(data_base_viewer):
 
     
 
-########Row three#######
+    ########Row three#######
     organization_number_box= tk.Entry(data_base_viewer, bg="white")
     organization_number_box.place(height=15,width=120, x=580,y=20)
 
@@ -102,5 +100,4 @@ def CreateEntriesFrameThree(data_base_viewer):
 
     country_box = tk.Entry(data_base_viewer, bg="white")
     country_box.place(height=15,width=120, x=580,y=160)
-
 

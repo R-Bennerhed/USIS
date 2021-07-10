@@ -8,10 +8,16 @@ from backend import*
 current_url =""
 
 
-def SwitchToFrameTwo(frame_two, table1, dashboard_frame):
+def SwitchToFrameTwo(frame_two,frame_three, table1, dashboard_frame):
     SetFrameTwo(frame_two,dashboard_frame)
     list_of_clients_keys, list_of_clients_values = GetTojFile(current_url,table1)
-    CreateDashboardButtons(dashboard_frame,list_of_clients_keys, list_of_clients_values)
+    CreateDashboardButtons(dashboard_frame,list_of_clients_keys, list_of_clients_values, frame_three)
+
+
+def SwitchToFrameTwo(frame_two,frame_three, table1, dashboard_frame):
+    SetFrameTwo(frame_two,dashboard_frame)
+    list_of_clients_keys, list_of_clients_values = GetTojFile(current_url,table1)
+    CreateDashboardButtons(dashboard_frame,list_of_clients_keys, list_of_clients_values, frame_three)
 
 def SetUrl(url):
     global current_url
@@ -38,22 +44,21 @@ def GetTojFile(current_url,table1): # This function is activated when you press 
         print("clients arranged")
         return list_of_clients_keys, list_of_clients_values
 
-def CreateDashboardButtons(dashboard_frame, list_of_clients_keys, list_of_clients_values):
-    dashboard_buttons = []
-    dashboard_button_x_location = 0
-    dashboard_button_y_location = 50
+
 
     for i in range (len(list_of_clients_keys)):
-        dashboard_buttons.append(tk.Button(dashboard_frame, text = list_of_clients_keys[i],fg="black", bg="#eaffbf",highlightcolor="red", height=3)) #TODO lägg till command
+        dashboard_buttons.append(tk.Button(dashboard_frame, text = list_of_clients_keys[i],fg="black", bg="#eaffbf",highlightcolor="red", height=3, command=lambda: SwitchToFrameThree(frame_three,dashboard_frame))) #TODO lägg till command
         dashboard_buttons[i].place(height=40,width=150, x=dashboard_button_x_location, y=dashboard_button_y_location)
         dashboard_button_y_location = dashboard_button_y_location + 50
 
 
-
-
 def SwitchToFrameThree(frame_three, dashboard_frame):
-    frame_three.place(height=900,width=1300)
-    dashboard_frame.place(height=1000,width=200, x=0,y=0)
+        SetFrameThree(frame_three,dashboard_frame)
+
+
+
+def SetFrameThree(frame_three,dashboard_frame):
+        frame_three.place(height=900,width=1100, x=200,y=0)
 
 
 

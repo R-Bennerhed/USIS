@@ -8,8 +8,8 @@ from GUI_helper_function import*
 
 
 ################################################### Creates button that will switch to frame 2 #######################################################
-def SwitchFrameButton(frame_one, frame_two,table1, dashboard_frame):
-    switch_frame_button = tk.Button(frame_one, text = "Select properties", background="grey",height=5, command= lambda: SwitchToFrameTwo(frame_two,table1,dashboard_frame))
+def SwitchFrameButton(frame_one, frame_two,frame_three,table1, dashboard_frame):
+    switch_frame_button = tk.Button(frame_one, text = "Select properties", background="grey",height=5, command= lambda: SwitchToFrameTwo(frame_two, frame_three, table1,dashboard_frame))
     switch_frame_button.place(height=40,width=120, x=1035, y=400)
 
 

@@ -50,19 +50,19 @@ def CreateDashboardFrame(frame):
     dashboard_frame = tk.Frame(frame, bg="#eaffbf")
     return dashboard_frame
 
-# def CreateFrameThree(root,dashboard_frame):
-#     frame_three = tk.Frame(root, bg="green")
-#     # frame_three.place(height=900,width=1300)
-#     # frame = frame_three
-#     # CreateDashboardFrame(frame)
-#     # # dashboard_frame.place(height=1000,width=200, x=0,y=0)
-#     # dashboard_frame.pack()
+def CreateFrameThree(frame_two):
+    frame_three = tk.Frame(frame_two, bg="yellow")
+    # frame_three.place(height=900,width=1300)
+    frame = frame_three
+    # CreateDashboardFrame(frame)
+    # dashboard_frame.place(height=1000,width=200, x=0,y=0)
+    # dashboard_frame.pack()
 
-#     data_base_viewer = tk.Frame(root, bg="white")
-#     # data_base_viewer.place(height=200,width=800, x=300,y=50)
-#     CreateLablesFrameThree(data_base_viewer)
-#     CreateEntriesFrameThree(data_base_viewer)
-#     return frame_three
+    data_base_viewer = tk.Frame(frame_three, bg="white")
+    data_base_viewer.place(height=200,width=800, x=300,y=50)
+    CreateLablesFrameThree(data_base_viewer)
+    CreateEntriesFrameThree(data_base_viewer)
+    return frame_three
 
 
 
@@ -78,8 +78,8 @@ canvas.pack()
 frame_one, url_box = CreateFrameOne(root) # Creates the first frame
 frame_two, table1 = CreateFrameTwo(root) # Crates the second frame
 dashboard_frame=CreateDashboardFrame(root)
-# frame_three = CreateFrameThree(root,dashboard_frame)
-SwitchFrameButton(frame_one,frame_two,table1,dashboard_frame) # TODO! Might need frame_two in the future
+frame_three = CreateFrameThree(root)
+SwitchFrameButton(frame_one,frame_two,frame_three,table1,dashboard_frame) # TODO! Might need frame_two in the future
 # SwitchToFrameThree(frame_three)
 root.mainloop()
 
